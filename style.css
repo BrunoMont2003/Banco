@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+.container-fluid {
+  background-color: #101217;
+  min-height: 100vh !important;
+}
+.card {
+  background-color: #262b34;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.card:hover {
+  border: 1px solid #fff;
+}
+.card-header {
+  border-bottom: 0ch;
+}
+#in-balance::before,
+#balance::before {
+  content: "$";
+  margin-right: 0.5rem;
+}
+#password-container .card,
+#withdraw-money-container .card,
+#deposit-money-container .card {
+  background-color: transparent;
+  border: 1px solid #262b34;
+  cursor: auto;
+}
+.show {
+  display: block !important;
+}
+.dollar {
+  left: 20px;
+  position: absolute;
+}
+#withdraw,
+#deposit {
+  padding-left: 40px;
+  letter-spacing: 4px;
+}

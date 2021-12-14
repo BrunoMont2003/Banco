@@ -1,0 +1,181 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Banco</title>
+  </head>
+  <body>
+    <div class="container-fluid text-white p-5" id="main-container">
+      <div class="row mb-4">
+        <h1>Select your account</h1>
+      </div>
+      <div class="row card-container" id="card-container">
+        <div
+          class="card-account card col-12 col-md-8 col-lg-5 mx-lg-3 p-3 my-4"
+        >
+          <h6 class="card-header text-muted">Name</h6>
+          <h5 class="card-header" id="name">Bruno Montañez Diaz</h5>
+          <h6 class="card-header text-muted">Balance</h6>
+          <h5 class="card-header" id="balance">699.99</h5>
+        </div>
+      </div>
+      <form class="row d-none" id="password-container">
+        <div class="card col-12 col-md-8 col-lg-5 mx-lg-3 p-3 mb-4">
+          <label for="password" class="form-label">Enter Password:</label>
+          <input type="password" class="form-control" id="password" />
+          <span class="text-danger my-2 d-none" id="invalid-password"
+            >Invalid Password</span
+          >
+          <button
+            type="submit"
+            id="btnLogin"
+            class="btn btn-outline-light my-3"
+          >
+            Confirm Password
+          </button>
+        </div>
+      </form>
+      <!-- in -->
+      <!-- <header class="row d-flex align-items-center p-3">
+        <div class="col-auto p-3 bg-info me-2">
+          <i class="fas fa-piggy-bank"></i>
+        </div>
+        <div class="col-auto">
+          <span class="text-muted">Hello Bruno,</span>
+          <h6>Welcome Back!</h6>
+        </div>
+      </header>
+      <div class="row my-3 p-3">
+        <div
+          class="
+            py-3
+            col-12 col-md-8 col-lg-5
+            bg-info
+            rounded-1
+            text-dark
+            d-flex
+            flex-column
+            align-items-center
+          "
+        >
+          <span class="text-muted mb-2">Total Balance:</span>
+          <h5 id="in-balance">999</h5>
+        </div>
+      </div>
+      <div class="row p-3">
+        <div class="col-12 col-md-8 col-lg-5 mb-4">
+          <div class="row d-flex justify-content-between">
+            <div class="card col-5 py-3 ps-3 pe-5" id="withdraw-option">
+              <div class="card-header">
+                <i
+                  class="
+                    fas
+                    fa-money-check-alt
+                    p-2
+                    rounded-1
+                    bg-light
+                    text-danger
+                  "
+                ></i>
+              </div>
+              <div class="card-header">Withdraw Money</div>
+            </div>
+            <div class="card col-5 py-3 ps-3 pe-5" id="deposit-option">
+              <div class="card-header">
+                <i
+                  class="
+                    fas
+                    fa-money-check-alt
+                    p-2
+                    rounded-1
+                    bg-light
+                    text-success
+                  "
+                ></i>
+              </div>
+              <div class="card-header">Deposit Money</div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- fin -->
+      <!-- retiro -->
+      <!-- <div class="row p-3">
+        <div class="col-auto">
+          <h5>Withdraw Money</h5>
+        </div>
+      </div>
+      <form class="row p-3" id="withdraw-money-container">
+        <div class="card col-12 col-md-8 col-lg-5 mx-lg-3 p-3 mb-4">
+          <label for="withdraw" class="form-label"
+            >Enter the amount to withdraw:</label
+          >
+          <div class="d-flex align-items-center position-relative">
+            <i class="dollar fas fa-dollar-sign position- text-dark"></i>
+            <input type="number" class="form-control w-100" id="withdraw" />
+          </div>
+          <span class="text-danger my-2 d-none" id="invalid-withdraw"
+            >Insufficient Funds</span
+          >
+          <button
+            type="submit"
+            id="btnWithdraw"
+            class="btn btn-outline-light my-3"
+          >
+            Confirm
+          </button>
+        </div>
+      </form> -->
+      <!--fin- retiro -->
+      <!-- deposito -->
+      <!-- <div class="row p-3">
+        <div class="col-auto">
+          <h5>Deposit Money</h5>
+        </div>
+      </div>
+      <form class="row p-3" id="deposit-money-container">
+        <div class="card col-12 col-md-8 col-lg-5 mx-lg-3 p-3 mb-4">
+          <label for="Deposit" class="form-label"
+            >Enter the amount to deposit:</label
+          >
+          <div class="d-flex align-items-center position-relative">
+            <i class="dollar fas fa-dollar-sign position- text-dark"></i>
+            <input type="number" class="form-control w-100" id="deposit" />
+          </div>
+          <span class="text-danger my-2 d-none" id="invalid-deposit"
+            >Exceed savings limits</span
+          >
+          <span class="text-success my-2 d-none" id="success-deposit"
+            >Amount successfully deposited</span
+          >
+          <button
+            type="submit"
+            id="btnDeposit"
+            class="btn btn-outline-light my-3"
+          >
+            Confirm
+          </button>
+        </div>
+      </form> -->
+      <!-- fin deposito -->
+    </div>
+    <script src="main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/faff7685bf.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
