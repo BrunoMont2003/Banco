@@ -108,63 +108,68 @@
       </div> -->
       <!-- fin -->
       <!-- retiro -->
-      <!-- <div class="row p-3">
-        <div class="col-auto">
-          <h5>Withdraw Money</h5>
-        </div>
-      </div>
-      <form class="row p-3" id="withdraw-money-container">
-        <div class="card col-12 col-md-8 col-lg-5 mx-lg-3 p-3 mb-4">
-          <label for="withdraw" class="form-label"
-            >Enter the amount to withdraw:</label
-          >
-          <div class="d-flex align-items-center position-relative">
-            <i class="dollar fas fa-dollar-sign position- text-dark"></i>
-            <input type="number" class="form-control w-100" id="withdraw" />
+      <div id="withdraw-box" class="d-none">
+        <div class="row p-3">
+          <div class="col-auto">
+            <h5>Withdraw Money</h5>
           </div>
-          <span class="text-danger my-2 d-none" id="invalid-withdraw"
-            >Insufficient Funds</span
-          >
-          <button
-            type="submit"
-            id="btnWithdraw"
-            class="btn btn-outline-light my-3"
-          >
-            Confirm
-          </button>
         </div>
-      </form> -->
+        <form class="row p-3" id="withdraw-money-container">
+          <div class="card col-12 col-md-8 col-lg-5 mx-lg-3 p-3 mb-4">
+            <label for="withdraw" class="form-label"
+              >Enter the amount to withdraw:</label
+            >
+            <div class="d-flex align-items-center position-relative">
+              <i class="dollar fas fa-dollar-sign position- text-dark"></i>
+              <input type="number" class="form-control w-100" id="withdraw" />
+            </div>
+            <span class="text-danger my-2 d-none" id="invalid-withdraw"
+              >Insufficient Funds</span
+            >
+            <button
+              type="submit"
+              id="btnWithdraw"
+              class="btn btn-outline-light my-3"
+            >
+              Confirm
+            </button>
+          </div>
+        </form>
+      </div>
+
       <!--fin- retiro -->
       <!-- deposito -->
-      <!-- <div class="row p-3">
-        <div class="col-auto">
-          <h5>Deposit Money</h5>
-        </div>
-      </div>
-      <form class="row p-3" id="deposit-money-container">
-        <div class="card col-12 col-md-8 col-lg-5 mx-lg-3 p-3 mb-4">
-          <label for="Deposit" class="form-label"
-            >Enter the amount to deposit:</label
-          >
-          <div class="d-flex align-items-center position-relative">
-            <i class="dollar fas fa-dollar-sign position- text-dark"></i>
-            <input type="number" class="form-control w-100" id="deposit" />
+      <div id="deposit-box" class="d-none">
+        <div class="row p-3">
+          <div class="col-auto">
+            <h5>Deposit Money</h5>
           </div>
-          <span class="text-danger my-2 d-none" id="invalid-deposit"
-            >Exceed savings limits</span
-          >
-          <span class="text-success my-2 d-none" id="success-deposit"
-            >Amount successfully deposited</span
-          >
-          <button
-            type="submit"
-            id="btnDeposit"
-            class="btn btn-outline-light my-3"
-          >
-            Confirm
-          </button>
         </div>
-      </form> -->
+        <form class="row p-3" id="deposit-money-container">
+          <div class="card col-12 col-md-8 col-lg-5 mx-lg-3 p-3 mb-4">
+            <label for="Deposit" class="form-label"
+              >Enter the amount to deposit:</label
+            >
+            <div class="d-flex align-items-center position-relative">
+              <i class="dollar fas fa-dollar-sign position- text-dark"></i>
+              <input type="number" class="form-control w-100" id="deposit" />
+            </div>
+            <span class="text-danger my-2 d-none" id="invalid-deposit"
+              >Exceed savings limits</span
+            >
+            <span class="text-success my-2 d-none" id="success-deposit"
+              >Amount successfully deposited</span
+            >
+            <button
+              type="submit"
+              id="btnDeposit"
+              class="btn btn-outline-light my-3"
+            >
+              Confirm
+            </button>
+          </div>
+        </form>
+      </div>
       <!-- fin deposito -->
     </div>
     <script src="main.js"></script>

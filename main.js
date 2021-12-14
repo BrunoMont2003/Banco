@@ -167,13 +167,8 @@ window.onload= ()=>{
                             </div>
                             </div>
                         </div>
-                        `;
-                        mainContainer.innerHTML = innerAccount; 
-                        
-                        let withdraw = document.getElementById('withdraw-option');
-                        withdraw.addEventListener('click',()=>{
-                            mainContainer.innerHTML = innerAccount +
-                            `
+                            <!-- retiro -->
+                            <div id="withdraw-box" class="d-none">
                             <div class="row p-3">
                                 <div class="col-auto">
                                 <h5>Withdraw Money</h5>
@@ -203,29 +198,11 @@ window.onload= ()=>{
                                 </button>
                                 </div>
                             </form>
-                            `
-                            let txtAmountWithdraw = document.getElementById('withdraw');
-                            let invalidWithdraw = document.getElementById('invalid-withdraw');
-                            let successWithdraw = document.getElementById('success-withdraw');
-                            let inBalance = document.getElementById('in-balance');
-                            let btnWithdraw = document.getElementById('btnWithdraw');
-                            btnWithdraw.addEventListener('click',(event) =>{
-                                event.preventDefault();
-                                if(cuenta.retirarMonto(txtAmountWithdraw.value)){
-                                    invalidWithdraw.classList.remove('show');
-                                    successWithdraw.classList.add('show');
-                                    inBalance.innerText=cuenta.consultarSaldo();
-                                    txtAmountWithdraw.value="";
-                                }else{
-                                    invalidWithdraw.classList.add('show');
-                                    successWithdraw.classList.remove('show');
-                                }
-                            })
-                        });
-                        let deposit = document.getElementById('deposit-option');
-                        deposit.addEventListener('click',()=>{
-                            mainContainer.innerHTML = innerAccount +
-                            `
+                            </div>
+                    
+                            <!--fin- retiro -->
+                            <!-- deposito -->
+                            <div id="deposit-box" class="d-none">
                             <div class="row p-3">
                                 <div class="col-auto">
                                 <h5>Deposit Money</h5>
@@ -255,7 +232,42 @@ window.onload= ()=>{
                                 </button>
                                 </div>
                             </form>
-                            `
+                            </div>
+                            <!-- fin deposito -->
+                        `;
+                        mainContainer.innerHTML = innerAccount; 
+                        
+                        let depositBox = document.getElementById('deposit-box');
+                        let withdrawBox = document.getElementById('withdraw-box');
+                        
+                        let withdraw = document.getElementById('withdraw-option');
+                        withdraw.addEventListener('click',()=>{
+                            depositBox.classList.remove('show');
+                            withdrawBox.classList.add('show');
+                            
+                            let txtAmountWithdraw = document.getElementById('withdraw');
+                            let invalidWithdraw = document.getElementById('invalid-withdraw');
+                            let successWithdraw = document.getElementById('success-withdraw');
+                            let inBalance = document.getElementById('in-balance');
+                            let btnWithdraw = document.getElementById('btnWithdraw');
+                            btnWithdraw.addEventListener('click',(event) =>{
+                                event.preventDefault();
+                                if(cuenta.retirarMonto(txtAmountWithdraw.value)){
+                                    invalidWithdraw.classList.remove('show');
+                                    successWithdraw.classList.add('show');
+                                    inBalance.innerText=cuenta.consultarSaldo();
+                                    txtAmountWithdraw.value="";
+                                }else{
+                                    invalidWithdraw.classList.add('show');
+                                    successWithdraw.classList.remove('show');
+                                }
+                            })
+                        });
+                        let deposit = document.getElementById('deposit-option');
+                        deposit.addEventListener('click',()=>{
+                            depositBox.classList.add('show');
+                            withdrawBox.classList.remove('show');
+                            
                             let txtAmountDeposit = document.getElementById('deposit');
                             let invalidDeposit = document.getElementById('invalid-deposit');
                             let successDeposit = document.getElementById('success-deposit');
