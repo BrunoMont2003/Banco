@@ -61,13 +61,13 @@ const getBalanceInStorage = (id) =>{
 
 //OBJETOS
 let cuentas = [];
-let cuentaA = new Cuenta('Bruno Montañez Diaz',getBalanceInStorage('cuenta-1'), '123456','cuenta-1');
+let cuentaA = new Cuenta('Bruno Montañez Diaz',800, '123456','cuenta-1');
 cuentas.push(cuentaA);
-let cuentaB = new Cuenta('Cristiano Ronaldo',getBalanceInStorage('cuenta-2'), 'ernes_34A','cuenta-2');
+let cuentaB = new Cuenta('Cristiano Ronaldo',900, 'ernes_34A','cuenta-2');
 cuentas.push(cuentaB);
-let cuentaC = new Cuenta('Lionel Messi',getBalanceInStorage('cuenta-3'), 'boca_52!','cuenta-3');
+let cuentaC = new Cuenta('Lionel Messi',500, 'boca_52!','cuenta-3');
 cuentas.push(cuentaC);
-let cuentaD = new Cuenta('Mason Mount',getBalanceInStorage('cuenta-4'), 'holandez_66!','cuenta-4');
+let cuentaD = new Cuenta('Mason Mount',541, 'holandez_66!','cuenta-4');
 cuentas.push(cuentaD);
 
 
@@ -79,14 +79,25 @@ let body = document.getElementsByTagName('body')[0];
 let cardContainer = document.getElementById('card-container');
 cardContainer.innerHTML='';
 cuentas.forEach(cuenta => {
-    //setBalanceInStorage(cuenta);
-    cardContainer.innerHTML+=`
-    <div class="card-account card col-12 col-md-8 col-lg-5 mx-lg-3 p-3 my-4" id="${cuenta.id}">
-    <h6 class="card-header text-muted">Name</h6>
-    <h5 class="card-header" id="name">${cuenta.nombre}</h5>
-    <h6 class="card-header text-muted">Balance</h6>
-    <h5 class="card-header" id="balance">${getBalanceInStorage(cuenta.id)}</h5>
-    </div>`
+    if (localStorage.length != cuentas.length) {
+        setBalanceInStorage(cuenta);
+        cardContainer.innerHTML+=`
+        <div class="card-account card col-12 col-md-8 col-lg-5 mx-lg-3 p-3 my-4" id="${cuenta.id}">
+        <h6 class="card-header text-muted">Name</h6>
+        <h5 class="card-header" id="name">${cuenta.nombre}</h5>
+        <h6 class="card-header text-muted">Balance</h6>
+        <h5 class="card-header" id="balance">${cuenta.saldo}</h5>
+        </div>`
+    }else{
+
+        cardContainer.innerHTML+=`
+        <div class="card-account card col-12 col-md-8 col-lg-5 mx-lg-3 p-3 my-4" id="${cuenta.id}">
+        <h6 class="card-header text-muted">Name</h6>
+        <h5 class="card-header" id="name">${cuenta.nombre}</h5>
+        <h6 class="card-header text-muted">Balance</h6>
+        <h5 class="card-header" id="balance">${getBalanceInStorage(cuenta.id)}</h5>
+        </div>`
+    }
 });
 //boton atras
 let btnBack = document.getElementById('btnBack');
